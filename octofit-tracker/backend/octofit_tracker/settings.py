@@ -27,10 +27,11 @@ DEBUG = True
 
 import os
 
+import os
 # Permitir localhost y el dominio de Codespaces
 CODESPACE_NAME = os.environ.get('CODESPACE_NAME')
 codespace_host = f"{CODESPACE_NAME}-8000.app.github.dev" if CODESPACE_NAME else None
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'fearful-spooky-specter-pxqjqg494pc7rr5-8000.app.github.dev', 'fearful-spooky-specter-pxqjqg494pc7rr5-3000.app.github.dev']
 if codespace_host:
     ALLOWED_HOSTS.append(codespace_host)
 
@@ -51,8 +52,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -130,15 +131,33 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-# CORS settings
-CORS_ALLOW_ALL_ORIGINS = True
+## CORS settings
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    'https://fearful-spooky-specter-pxqjqg494pc7rr5-3000.app.github.dev',
+    'https://fearful-spooky-specter-pxqjqg494pc7rr5-8000.app.github.dev',
+]
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_HEADERS = ['*']
-CORS_ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
-
-# Permitir todos los hosts
-ALLOWED_HOSTS = ['*']
-
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 USE_TZ = True
 
 

@@ -1,0 +1,61 @@
+
+body {
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  color: #222;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #0f2027, #2c5364);
+}
+.navbar .navbar-brand, .navbar .nav-link {
+  color: #fff !important;
+}
+.navbar .nav-link.active, .navbar .nav-link:hover {
+  color: #ffd700 !important;
+}
+
+.App-logo {
+  height: 48px;
+  margin-right: 16px;
+}
+
+h2, h5, .card-title {
+  color: #2c5364;
+}
+
+.table {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(44,83,100,0.08);
+}
+.table th {
+  background: #2c5364;
+  color: #fff;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #e0eafc;
+}
+
+.btn-primary {
+  background-color: #2c5364;
+  border-color: #2c5364;
+}
+.btn-success {
+  background-color: #0f2027;
+  border-color: #0f2027;
+}
+.btn-link {
+  color: #2c5364;
+}
+.btn-link:hover {
+  color: #ffd700;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(44,83,100,0.12);
+}
+
+.modal-content {
+  border-radius: 12px;
+}
